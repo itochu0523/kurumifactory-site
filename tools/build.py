@@ -9,6 +9,23 @@ UPDATED = "2026年11月19日"
 APP = "狩猟免許・猟銃講習 学習アプリ"  # 正式名が決まったら置き換える
 
 
+# 更新情報（新しいものを上に追加する）。tag: release / update / fix / info
+NEWS = [
+    ("2026-11-19", "info", "", "公式サイトを公開しました。狩猟アプリは iPhone・iPad・Android 向けに準備中です。"),
+]
+TAG_LABEL = {"release": "リリース", "update": "アップデート", "fix": "修正", "info": "お知らせ"}
+
+
+def news_list(items):
+    rows = []
+    for date, tag, app, text in items:
+        y, m, d = date.split("-")
+        app_html = f'<span class="app">{app}</span>' if app else ""
+        rows.append(f'<li><time datetime="{date}">{y}年{int(m)}月{int(d)}日</time>'
+                    f'<div><span class="tag tag-{tag}">{TAG_LABEL[tag]}</span>{app_html}<div>{text}</div></div></li>')
+    return '<ul class="news">' + "".join(rows) + "</ul>"
+
+
 def layout(title, desc, body, path):
     t = f"{title}｜{BRAND}" if title != BRAND else BRAND
     return f"""<!doctype html>
@@ -20,13 +37,15 @@ def layout(title, desc, body, path):
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/theme.js"></script>
 </head><body>
 <header><div class="wrap"><a class="brand" href="/"><img src="/assets/favicon.svg" alt="">{BRAND}</a>
-<nav><a href="/hunting/">狩猟アプリ</a><a href="/support/">サポート</a></nav></div></header>
+<div class="head-right"><nav><a href="/hunting/">狩猟アプリ</a><a href="/news/">更新情報</a><a href="/support/">サポート</a></nav>
+<button id="theme-btn" class="theme-btn" type="button"><span class="icon">🌓</span><span class="label">自動</span></button></div></div></header>
 <main><div class="wrap">
 {body}
 </div></main>
-<footer><div class="wrap"><a href="/support/">サポート</a><a href="/privacy/">プライバシーポリシー</a><a href="/terms/">利用規約</a>
+<footer><div class="wrap"><a href="/news/">更新情報</a><a href="/support/">サポート</a><a href="/privacy/">プライバシーポリシー</a><a href="/terms/">利用規約</a>
 <p>&copy; 2026 {BRAND}</p></div></footer>
 </body></html>
 """
@@ -42,6 +61,9 @@ PAGES = {
 <span class="badge">準備中</span><h3>{APP}</h3>
 <p class="muted">狩猟免許の試験対策から、猟銃の所持許可までの手続きを一つのアプリで。</p></a>
 </div>
+<h2>更新情報</h2>
+{news_list(NEWS[:3])}
+<p><a href="/news/">すべての更新情報 →</a></p>
 <h2>お問い合わせ</h2>
 <p>ご質問・不具合のご報告は <a href="/support/">サポート</a> からどうぞ。</p>
 """),
@@ -59,7 +81,14 @@ PAGES = {
 </div>
 <h2>ご注意</h2>
 <p class="muted">本アプリは公式の試験問題ではありません。問題と解説は法令・公的資料をもとに独自に作成しています。法令は改正されることがあるため、受験・申請の前に必ず各都道府県・警察署の最新情報をご確認ください。</p>
-<p>リリースのお知らせはこのページでお伝えします。</p>
+<h2>このアプリの更新情報</h2>
+{news_list([n for n in NEWS if n[2] in ("", APP)][:5])}
+<p><a href="/news/">すべての更新情報 →</a></p>
+"""),
+"/news/": ("更新情報", f"{BRAND}のアプリのリリース・アップデート・修正のお知らせ。", f"""
+<h1>更新情報</h1>
+<p class="lead">アプリのリリース、新しい機能、不具合の修正をお知らせします。</p>
+{news_list(NEWS)}
 """),
 "/support/": ("サポート", f"{APP}のよくある質問とお問い合わせ先。", f"""
 <h1>サポート</h1>
