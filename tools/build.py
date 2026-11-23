@@ -6,7 +6,8 @@ ROOT = Path(__file__).resolve().parent.parent
 BRAND = "Kurumi Factory"
 MAIL = "support@kurumifactory.com"
 UPDATED = "2026年11月19日"
-APP = "狩猟免許・猟銃講習 学習アプリ"  # 正式名が決まったら置き換える
+APP = "かりべん"  # アプリ名（2026-11-23 決定）
+APP_DESC = "狩猟免許・猟銃講習の問題集"
 
 
 # 更新情報（新しいものを上に追加する）。tag: release / update / fix / info
@@ -59,6 +60,7 @@ PAGES = {
 <div class="grid">
 <a class="card" href="/hunting/" style="text-decoration:none;color:inherit">
 <span class="badge">準備中</span><h3>{APP}</h3>
+<p><b>{APP_DESC}</b></p>
 <p class="muted">狩猟免許の試験対策から、猟銃の所持許可までの手続きを一つのアプリで。</p></a>
 </div>
 <h2>更新情報</h2>
@@ -70,6 +72,7 @@ PAGES = {
 "/hunting/": (APP, "狩猟免許試験と猟銃等講習会の対策、取得までの手続きをまとめて管理できる iPhone・iPad・Android アプリ。", f"""
 <span class="badge">iPhone・iPad・Android 準備中</span>
 <h1>{APP}</h1>
+<p><b>{APP_DESC}</b></p>
 <p class="lead">「何を覚えればいいか」から「いつまでに何をするか」まで。<br>狩猟免許と猟銃の取得を、このアプリひとつで。</p>
 <div class="grid">
 <div class="card"><h3>📘 体系まとめ</h3><p class="muted">数字・期限・回数など、覚えれば取れる要点を分野ごとに整理。</p></div>
