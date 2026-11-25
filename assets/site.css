@@ -49,3 +49,19 @@ header .wrap{height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:8px;row-
 nav a{margin:0 16px 0 0;font-size:15px;line-height:44px}
 .theme-btn{margin-left:0}
 }
+/* アプリ紹介ページ: 数字・比較表・ストアボタン */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.stat b{display:block;font-size:28px;line-height:1.2;font-variant-numeric:tabular-nums}
+.stat span{color:var(--sub);font-size:14px}
+.stores{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 8px}
+.store{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--sub);font-weight:700;text-decoration:none}
+.compare{width:100%;border-collapse:separate;border-spacing:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:16px 0}
+.compare th,.compare td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:15px}
+.compare tr:last-child th,.compare tr:last-child td{border-bottom:0}
+.compare thead th{background:var(--bg);font-size:14px}
+.compare td.paid{font-weight:700}
+.checks{padding-left:0;list-style:none}
+.checks li{padding-left:28px;position:relative;margin:8px 0}
+.checks li::before{content:"✓";position:absolute;left:4px;color:var(--accent);font-weight:900}
+.links li{margin:6px 0}

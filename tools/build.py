@@ -61,7 +61,7 @@ PAGES = {
 <a class="card" href="/hunting/" style="text-decoration:none;color:inherit">
 <span class="badge">準備中</span><h3>{APP}</h3>
 <p><b>{APP_DESC}</b></p>
-<p class="muted">狩猟免許の試験対策から、猟銃の所持許可までの手続きを一つのアプリで。</p></a>
+<p class="muted">狩猟免許600問・猟銃講習759問。ひっかけと数字のまとめ、合格予想の分析、取得までの手続きと期限の通知まで。</p></a>
 </div>
 <h2>更新情報</h2>
 {news_list(NEWS[:3])}
@@ -69,21 +69,81 @@ PAGES = {
 <h2>お問い合わせ</h2>
 <p>ご質問・不具合のご報告は <a href="/support/">サポート</a> からどうぞ。</p>
 """),
-"/hunting/": (APP, "狩猟免許試験と猟銃等講習会の対策、取得までの手続きをまとめて管理できる iPhone・iPad・Android アプリ。", f"""
+"/hunting/": (APP, "狩猟免許試験と猟銃等講習会の考査対策アプリ。狩猟免許600問・猟銃講習759問、ひっかけと数字のまとめ、合格予想の分析、取得までの手続きと期限の通知まで。", f"""
 <span class="badge">iPhone・iPad・Android 準備中</span>
 <h1>{APP}</h1>
 <p><b>{APP_DESC}</b></p>
 <p class="lead">「何を覚えればいいか」から「いつまでに何をするか」まで。<br>狩猟免許と猟銃の取得を、このアプリひとつで。</p>
-<div class="grid">
-<div class="card"><h3>📘 体系まとめ</h3><p class="muted">数字・期限・回数など、覚えれば取れる要点を分野ごとに整理。</p></div>
-<div class="card"><h3>✍️ 狩猟免許の問題</h3><p class="muted">法令・猟具・鳥獣・保護管理を分野別に。苦手だけを繰り返す演習も。</p></div>
-<div class="card"><h3>🎯 猟銃講習の問題</h3><p class="muted">猟銃等講習会の考査に向けた ○× 演習と模擬テスト。</p></div>
-<div class="card"><h3>🗓 取得までのタスク</h3><p class="muted">免許 → 所持許可 → 登録までの手順と期限を通知でお知らせ。</p></div>
-<div class="card"><h3>📈 学習記録と分析</h3><p class="muted">正答率・苦手分野・模試の履歴をひと目で。</p></div>
-<div class="card"><h3>📴 オフラインで動く</h3><p class="muted">山の中でも勉強できます。データは端末の中に保存します。</p></div>
+<div class="stores">
+<span class="store" aria-disabled="true">App Store（近日公開）</span>
+<span class="store" aria-disabled="true">Google Play（近日公開）</span>
 </div>
+<p class="muted">公開したら、このページと<a href="/news/">更新情報</a>でお知らせします。</p>
+
+<div class="stats">
+<div class="stat"><b>600問</b><span>狩猟免許（3択）</span></div>
+<div class="stat"><b>759問</b><span>猟銃講習（○×）</span></div>
+<div class="stat"><b>210項目</b><span>体系まとめ（7章）</span></div>
+<div class="stat"><b>22手順</b><span>取得までのやること</span></div>
+</div>
+
+<h2>こんな方に</h2>
+<ul class="checks">
+<li>狩猟免許（わな猟・網猟・第一種／第二種銃猟）の試験を受ける方</li>
+<li>猟銃等講習会（初心者講習）の考査を受ける方</li>
+<li>免許の申請から猟銃の所持許可、狩猟者登録までの流れと期限を整理したい方</li>
+</ul>
+
+<h2>できること</h2>
+<div class="grid">
+<div class="card"><h3>✍️ 狩猟免許の問題 600問</h3><p class="muted">法令・猟具・鳥獣・保護管理・安全を分野別に。持っている免許の種類に合わせて出題します。</p></div>
+<div class="card"><h3>🎯 猟銃講習の問題 759問</h3><p class="muted">猟銃等講習会の考査に向けた ○× 演習。本番と同じ50問・60分の模擬考査も。</p></div>
+<div class="card"><h3>⚠️ ひっかけ・数字に強くなる</h3><p class="muted">「30日と14日」「3年・10年・20年」など、間違えやすい数字を並べて比べる章と、ひっかけ問題を多数収録。</p></div>
+<div class="card"><h3>📘 体系まとめ</h3><p class="muted">覚えれば取れる要点を分野ごとに整理。「隠して覚える」で答えを伏せて暗記チェック。覚えた項目には印が付きます。</p></div>
+<div class="card"><h3>📈 分析とグラフ</h3><p class="muted">合格予想・毎日の学習量・正答率の推移・分野ごとの正答率・苦手な論点ランキング。苦手だけをまとめて解き直せます。</p></div>
+<div class="card"><h3>🗓 取得までのやること</h3><p class="muted">免許 → 所持許可 → 狩猟者登録までの22の手順。日付を入れると法令どおりに期限を計算し、30日前・7日前・当日に通知します。</p></div>
+<div class="card"><h3>📜 すべての問題に根拠</h3><p class="muted">各問題に、もとにした条文（例: 鳥獣法 第40条）や公的資料を表示。条文と自動で照らし合わせて確認しています。</p></div>
+<div class="card"><h3>📴 オフライン・アカウント不要</h3><p class="muted">山の中でも勉強できます。登録不要で、学習記録は端末の中だけに保存します。</p></div>
+</div>
+
+<h2>無料版と有料版</h2>
+<p>まずは無料でお試しいただけます。気に入っていただけたら、買い切りですべての機能が使えます。<b>月額料金（サブスクリプション）や広告はありません。</b></p>
+<table class="compare">
+<thead><tr><th></th><th>無料</th><th>すべて使える（買い切り ¥800）</th></tr></thead>
+<tbody>
+<tr><th>問題</th><td>分野ごとに20問まで</td><td class="paid">全1,359問</td></tr>
+<tr><th>模擬試験・模擬考査</th><td>それぞれ1回</td><td class="paid">何度でも</td></tr>
+<tr><th>体系まとめ</th><td>各試験の最初の1章</td><td class="paid">全7章（まぎらわしい数字の章を含む）</td></tr>
+<tr><th>分析とグラフ</th><td>使えます</td><td class="paid">使えます</td></tr>
+<tr><th>取得までのやること・期限の通知</th><td>使えます</td><td class="paid">使えます</td></tr>
+<tr><th>問題の追加・法令改正への対応</th><td>無料の範囲に反映</td><td class="paid">すべてに反映（追加料金なし）</td></tr>
+</tbody>
+</table>
+<p class="muted">購入は App Store / Google Play を通して行います。機種変更や再インストールのあとは、アプリの「購入を復元する」で、もう一度お支払いせずに使えます。</p>
+
+<h2>サポートについて</h2>
+<p>個人で作っているアプリだからこそ、一人ひとりのお問い合わせにきちんとお返事します。</p>
+<ul class="checks">
+<li><b>メールでのお問い合わせ</b>に、通常3営業日以内にお返事します（<a href="mailto:{MAIL}">{MAIL}</a>）</li>
+<li><b>問題の誤りのご指摘</b>は、根拠の条文と照らして確認し、アップデートで修正します</li>
+<li><b>法令の改正</b>があったときは、問題・まとめ・手続きの内容を見直して更新します</li>
+<li><b>購入のトラブル</b>は「購入を復元する」と、ストアの窓口のご案内でサポートします</li>
+<li>よくある質問は<a href="/support/">サポートページ</a>にまとめています</li>
+</ul>
+
+<h2>もとにしている公的な情報</h2>
+<p class="muted">問題と解説は、次のような法令・公的資料をもとに、独自の文章で作成しています。</p>
+<ul class="links">
+<li><a href="https://laws.e-gov.go.jp/" rel="noopener">e-Gov 法令検索</a>（鳥獣保護管理法・銃刀法・火薬類取締法など）</li>
+<li><a href="https://www.env.go.jp/nature/choju/docs/docs5/docs5-hanbetu.pdf" rel="noopener">環境省「狩猟鳥獣の見分け方」</a></li>
+<li><a href="https://www.env.go.jp/nature/choju/capture/pdf/pdf4-1.pdf" rel="noopener">環境省「捕獲従事者研修テキスト」</a></li>
+<li><a href="https://www.npa.go.jp/laws/notification/seian/hoan/hoantsutatu2/20_ryojyukousa.pdf" rel="noopener">警察庁「猟銃等講習会における考査の運用要領」</a></li>
+</ul>
+
 <h2>ご注意</h2>
-<p class="muted">本アプリは公式の試験問題ではありません。問題と解説は法令・公的資料をもとに独自に作成しています。法令は改正されることがあるため、受験・申請の前に必ず各都道府県・警察署の最新情報をご確認ください。</p>
+<p class="muted">本アプリは公式の試験問題ではありません。試験の合格や許可の取得を保証するものではありません。法令は改正されることがあるため、受験・申請の前に必ず各都道府県・警察署の最新情報をご確認ください。</p>
+<p class="muted"><a href="/privacy/">プライバシーポリシー</a>　<a href="/terms/">利用規約</a></p>
+
 <h2>このアプリの更新情報</h2>
 {news_list([n for n in NEWS if n[2] in ("", APP)][:5])}
 <p><a href="/news/">すべての更新情報 →</a></p>
@@ -97,10 +157,12 @@ PAGES = {
 <h1>サポート</h1>
 <p class="lead">お困りのことがあれば、まずはよくある質問をご覧ください。</p>
 <h2>よくある質問</h2>
-<details><summary>機種変更したとき、学習記録は引き継げますか？</summary><p>アプリの「設定 → データの書き出し」でファイルを保存し、新しい端末で「読み込み」すると引き継げます。</p></details>
-<details><summary>購入した機能が使えなくなりました。</summary><p>「設定 → 購入の復元」を押してください。購入時と同じ Apple ID / Google アカウントでログインしている必要があります。</p></details>
-<details><summary>問題の内容が間違っている気がします。</summary><p>お手数ですが、問題の画面の「報告」ボタン、または下記メールでお知らせください。確認のうえ修正します。</p></details>
+<details><summary>無料版と有料版の違いは？</summary><p>無料版は、問題が分野ごとに20問まで、模擬試験が1回、体系まとめが各試験の最初の1章です。買い切り（¥800）で、全問題・模擬試験の何度でも・まとめの全章が使えます。分析とグラフ、取得までのやること・期限の通知は無料でも使えます。月額料金や広告はありません。</p></details>
+<details><summary>購入した機能が使えなくなりました。</summary><p>アプリの「設定 → 購入を復元する」を押してください。購入時と同じ Apple ID / Google アカウントでサインインしている必要があります。</p></details>
+<details><summary>機種変更したとき、学習記録は引き継げますか？</summary><p>学習記録は端末の中だけに保存しているため、今は新しい端末に引き継げません（引き継ぎの機能は準備中です）。購入は「購入を復元する」で引き継げます。</p></details>
+<details><summary>問題の内容が間違っている気がします。</summary><p>お手数ですが、問題の文章（またはスクリーンショット）を添えて、下記メールでお知らせください。根拠の条文と照らして確認し、修正します。</p></details>
 <details><summary>この問題は本番の試験と同じですか？</summary><p>いいえ。公式の試験問題ではなく、法令・公的資料をもとに独自に作成した練習問題です。</p></details>
+<details><summary>期限の通知が来ません。</summary><p>端末の「設定 → 通知」で、{APP} の通知が許可されているかご確認ください。</p></details>
 <details><summary>返金してほしい。</summary><p>購入はストア（Apple / Google）を通して行われるため、返金は各ストアの窓口からお申し込みください。</p></details>
 <h2>お問い合わせ</h2>
 <div class="card"><p>メール: <a href="mailto:{MAIL}">{MAIL}</a></p>
