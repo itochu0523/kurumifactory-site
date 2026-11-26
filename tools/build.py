@@ -2,6 +2,8 @@
 使い方: python3 tools/build.py  （ページ本文は PAGES を編集）"""
 from pathlib import Path
 
+from lp import pages as lp_pages
+
 ROOT = Path(__file__).resolve().parent.parent
 BRAND = "Kurumi Factory"
 MAIL = "support@kurumifactory.com"
@@ -106,6 +108,9 @@ PAGES = {
 <div class="card"><h3>📴 オフライン・アカウント不要</h3><p class="muted">山の中でも勉強できます。登録不要で、学習記録は端末の中だけに保存します。</p></div>
 </div>
 
+<h2>試験別の対策ページ（例題つき）</h2>
+<div class="chips"><a class="chip" href="/hunting/wana/">わな猟免許</a><a class="chip" href="/hunting/ami/">網猟免許</a><a class="chip" href="/hunting/jyu/">第一種銃猟免許</a><a class="chip" href="/hunting/koushu/">猟銃等講習会</a><a class="chip" href="/hunting/suji/">まぎらわしい数字</a><a class="chip" href="/hunting/chojyu/">狩猟鳥獣の見分け</a></div>
+
 <h2>無料版と有料版</h2>
 <p>まずは無料でお試しいただけます。気に入っていただけたら、買い切りですべての機能が使えます。<b>月額料金（サブスクリプション）や広告はありません。</b></p>
 <table class="compare">
@@ -208,8 +213,16 @@ PAGES = {
 """),
 }
 
+PAGES.update(lp_pages(APP))
+
 for path, (title, desc, body) in PAGES.items():
     out = ROOT / "index.html" if path == "/" else ROOT / path.strip("/") / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(layout(title, desc, body.strip(), path), encoding="utf-8")
     print("生成", out.relative_to(ROOT))
+
+# 検索エンジン向け（ページを足したら自動で載る）
+urls = "".join(f"<url><loc>https://kurumifactory.com{p}</loc></url>" for p in PAGES)
+(ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + "</urlset>\n", encoding="utf-8")
+(ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://kurumifactory.com/sitemap.xml\n", encoding="utf-8")
+print("生成 sitemap.xml robots.txt")

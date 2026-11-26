@@ -65,3 +65,14 @@ nav a{margin:0 16px 0 0;font-size:15px;line-height:44px}
 .checks li{padding-left:28px;position:relative;margin:8px 0}
 .checks li::before{content:"✓";position:absolute;left:4px;color:var(--accent);font-weight:900}
 .links li{margin:6px 0}
+/* ランディングページ: 例題・まとめ表・購入の入り口 */
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin:14px 0}
+.quiz .qno{margin:0;font-weight:800;color:var(--accent)}.quiz .qno span{margin-left:10px;font-weight:600;color:var(--sub);font-size:14px}
+.quiz .qtext{font-weight:700;font-size:17px}
+.choices{list-style:upper-alpha;padding-left:28px}.choices li{margin:6px 0}.choices.ox{list-style:none;display:flex;gap:24px;padding:0;font-size:22px;font-weight:900}
+.quiz details{margin:12px 0 0}.ans{font-weight:800;color:var(--accent)}
+.small{font-size:13px}
+.compare.sum th{width:40%;text-align:left}.tip{margin-top:4px;font-size:14px;color:var(--accent2)}
+.cta{border:2px solid var(--accent2);border-radius:var(--radius);padding:24px;margin:32px 0;background:var(--card);text-align:center}
+.cta-title{font-size:22px;font-weight:900;margin:0 0 8px}.cta .stores{justify-content:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px}.chip{padding:8px 14px;border:1px solid var(--line);border-radius:99px;text-decoration:none;background:var(--card)}
