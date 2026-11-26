@@ -2,7 +2,7 @@
 使い方: python3 tools/build.py  （ページ本文は PAGES を編集）"""
 from pathlib import Path
 
-from lp import pages as lp_pages
+from lp import hub_panels, pager, rail, pages as lp_pages
 
 ROOT = Path(__file__).resolve().parent.parent
 BRAND = "Kurumi Factory"
@@ -41,6 +41,7 @@ def layout(title, desc, body, path):
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/theme.js"></script>
+<script src="/assets/pager.js" defer></script>
 </head><body>
 <header><div class="wrap"><a class="brand" href="/"><img src="/assets/favicon.svg" alt="">{BRAND}</a>
 <div class="head-right"><nav><a href="/hunting/">狩猟アプリ</a><a href="/news/">更新情報</a><a href="/support/">サポート</a></nav>
@@ -72,6 +73,7 @@ PAGES = {
 <p>ご質問・不具合のご報告は <a href="/support/">サポート</a> からどうぞ。</p>
 """),
 "/hunting/": (APP, "狩猟免許試験と猟銃等講習会の考査対策アプリ。狩猟免許600問・猟銃講習759問、ひっかけと数字のまとめ、合格予想の分析、取得までの手続きと期限の通知まで。", f"""
+{rail("/hunting/")}
 <span class="badge">iPhone・iPad・Android 準備中</span>
 <h1>{APP}</h1>
 <p><b>{APP_DESC}</b></p>
@@ -108,8 +110,8 @@ PAGES = {
 <div class="card"><h3>📴 オフライン・アカウント不要</h3><p class="muted">山の中でも勉強できます。登録不要で、学習記録は端末の中だけに保存します。</p></div>
 </div>
 
-<h2>試験別の対策ページ（例題つき）</h2>
-<div class="chips"><a class="chip" href="/hunting/wana/">わな猟免許</a><a class="chip" href="/hunting/ami/">網猟免許</a><a class="chip" href="/hunting/jyu/">第一種銃猟免許</a><a class="chip" href="/hunting/koushu/">猟銃等講習会</a><a class="chip" href="/hunting/suji/">まぎらわしい数字</a><a class="chip" href="/hunting/chojyu/">狩猟鳥獣の見分け</a></div>
+<h2>試験別の対策（例題つき）</h2>
+{hub_panels()}
 
 <h2>無料版と有料版</h2>
 <p>まずは無料でお試しいただけます。気に入っていただけたら、買い切りですべての機能が使えます。<b>月額料金（サブスクリプション）や広告はありません。</b></p>
@@ -152,6 +154,7 @@ PAGES = {
 <h2>このアプリの更新情報</h2>
 {news_list([n for n in NEWS if n[2] in ("", APP)][:5])}
 <p><a href="/news/">すべての更新情報 →</a></p>
+{pager("/hunting/")}
 """),
 "/news/": ("更新情報", f"{BRAND}のアプリのリリース・アップデート・修正のお知らせ。", f"""
 <h1>更新情報</h1>

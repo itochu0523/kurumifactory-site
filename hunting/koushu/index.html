@@ -8,18 +8,31 @@
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/theme.js"></script>
+<script src="/assets/pager.js" defer></script>
 </head><body>
 <header><div class="wrap"><a class="brand" href="/"><img src="/assets/favicon.svg" alt="">Kurumi Factory</a>
 <div class="head-right"><nav><a href="/hunting/">狩猟アプリ</a><a href="/news/">更新情報</a><a href="/support/">サポート</a></nav>
 <button id="theme-btn" class="theme-btn" type="button"><span class="icon">🌓</span><span class="label">自動</span></button></div></div></header>
 <main><div class="wrap">
-<span class="badge">猟銃等講習会</span>
+<nav class="rail" aria-label="対策ページ"><a class="rail-item" href="/hunting/"><span>📊</span>アプリの紹介</a><a class="rail-item" href="/hunting/wana/"><span>🪤</span>わな猟免許</a><a class="rail-item" href="/hunting/ami/"><span>🕸️</span>網猟免許</a><a class="rail-item" href="/hunting/jyu/"><span>🎯</span>第一種銃猟免許</a><a class="rail-item on" href="/hunting/koushu/" aria-current=page><span>📝</span>猟銃等講習会</a><a class="rail-item" href="/hunting/suji/"><span>🔢</span>まぎらわしい数字</a><a class="rail-item" href="/hunting/chojyu/"><span>🦆</span>狩猟鳥獣の見分け</a></nav>
+<section class="panel hero">
+<span class="badge">📝 猟銃等講習会</span>
 <h1>猟銃等講習会（初心者講習）の考査対策</h1>
 <p class="lead">所持許可の手続き、保管・運搬、火薬類、安全な取扱い。<br>考査と同じ○×形式で、何度でも練習できます。</p>
-<h2>こんな悩みに</h2>
-<ul class="checks"><li>講習のテキストを読んでも、どこが問われるかわからない</li><li>14日・3月など、手続きの期限が覚えられない</li><li>本番の形で練習したい</li></ul>
-<h2>まずは解いてみよう</h2>
-<p>アプリには考査対策の○×問題が <b>759問</b>。本番と同じ <b>50問・60分</b> の模擬考査もできます。</p><div class="quiz"><p class="qno">例題 1<span>確認の期限</span></p>
+<div class="tiles">
+<div class="tile"><b>759<small>問</small></b><span>アプリに収録</span></div>
+<div class="tile"><b>○×</b><span>形式</span></div>
+<div class="tile"><b>3<small>問</small></b><span>無料の例題</span></div>
+<div class="tile"><b>¥800</b><span>買い切り・広告なし</span></div>
+</div>
+</section>
+<div class="panels two">
+<section class="panel"><h2>こんな悩みに</h2><ul class="checks"><li>講習のテキストを読んでも、どこが問われるかわからない</li><li>14日・3月など、手続きの期限が覚えられない</li><li>本番の形で練習したい</li></ul></section>
+<section class="panel"><h2>アプリでは</h2><p>考査対策の○×問題は 759問。本番と同じ50問・60分の模擬考査もできます。</p></section>
+</div>
+
+<h2 class="sec">まずは解いてみよう</h2>
+<div class="quizzes"><div class="quiz"><p class="qno">例題 1<span>確認の期限</span></p>
 <p class="qtext">猟銃の所持許可を受けて銃を所持することになったときは、14日以内に公安委員会の確認を受けなければならない。</p><ol class="choices ox"><li>○</li><li>×</li></ol>
 <details><summary>答えを見る</summary><p class="ans">正解: ○（正しい）</p><p>正しい。所持することとなった日から14日以内に、許可を受けた銃かどうかの確認を受けます。</p>
 <p class="muted small">根拠: 銃刀法 第4条の4</p></details></div>
@@ -30,15 +43,14 @@
 <div class="quiz"><p class="qno">例題 3<span>有効期間</span></p>
 <p class="qtext">猟銃の所持許可の有効期間は、許可を受けた日のあとの3回目の誕生日が経過するまでである。</p><ol class="choices ox"><li>○</li><li>×</li></ol>
 <details><summary>答えを見る</summary><p class="ans">正解: ○（正しい）</p><p>正しい。更新後も、満了後の3回目の誕生日までです。</p>
-<p class="muted small">根拠: 銃刀法 第7条の2</p></details></div>
+<p class="muted small">根拠: 銃刀法 第7条の2</p></details></div></div>
 <div class="cta">
 <p class="cta-title">続きは「かりべん」で</p>
 <p>狩猟免許 600問・猟銃講習 759問・まとめ 210項目。<br>まずは無料で。全部使うなら<b>買い切り ¥800</b>（月額・広告なし）。</p>
 <div class="stores"><span class="store" aria-disabled="true">App Store（近日公開）</span><span class="store" aria-disabled="true">Google Play（近日公開）</span></div>
 <p><a class="btn" href="/hunting/">アプリのくわしい紹介を見る</a></p>
 </div>
-<h2>ほかの対策ページ</h2>
-<div class="chips"><a class="chip" href="/hunting/wana/">わな猟免許</a><a class="chip" href="/hunting/ami/">網猟免許</a><a class="chip" href="/hunting/jyu/">第一種銃猟免許</a><a class="chip" href="/hunting/koushu/">猟銃等講習会</a><a class="chip" href="/hunting/suji/">数字まとめ</a><a class="chip" href="/hunting/chojyu/">狩猟鳥獣</a></div>
+<div class="pager"><a class="pg prev" href="/hunting/jyu/" data-prev><small>← 前へ</small><b>🎯 第一種銃猟免許</b></a><a class="pg next" href="/hunting/suji/" data-next><small>次へ →</small><b>🔢 まぎらわしい数字</b></a></div><div class="dots"><a class="dot" href="/hunting/" aria-label="アプリの紹介"></a><a class="dot" href="/hunting/wana/" aria-label="わな猟免許"></a><a class="dot" href="/hunting/ami/" aria-label="網猟免許"></a><a class="dot" href="/hunting/jyu/" aria-label="第一種銃猟免許"></a><a class="dot on" href="/hunting/koushu/" aria-label="猟銃等講習会"></a><a class="dot" href="/hunting/suji/" aria-label="まぎらわしい数字"></a><a class="dot" href="/hunting/chojyu/" aria-label="狩猟鳥獣の見分け"></a></div>
 <p class="muted small">本ページとアプリの問題は、法令・公的資料をもとに独自に作成したもので、公式の試験問題ではありません。法令は改正されることがあるため、受験・申請の前に都道府県・警察署の最新情報をご確認ください。</p>
 </div></main>
 <footer><div class="wrap"><a href="/news/">更新情報</a><a href="/support/">サポート</a><a href="/privacy/">プライバシーポリシー</a><a href="/terms/">利用規約</a>
