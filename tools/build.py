@@ -2,7 +2,8 @@
 使い方: python3 tools/build.py  （ページ本文は PAGES を編集）"""
 from pathlib import Path
 
-from lp import hub_panels, pager, rail, pages as lp_pages
+from lp import cta, hub_panels, pager, rail, pages as lp_pages
+from taiken import pages as taiken_pages
 
 ROOT = Path(__file__).resolve().parent.parent
 BRAND = "Kurumi Factory"
@@ -217,6 +218,7 @@ PAGES = {
 }
 
 PAGES.update(lp_pages(APP))
+PAGES.update(taiken_pages(cta(APP)))  # 体験記（記事があるときだけ）
 
 for path, (title, desc, body) in PAGES.items():
     out = ROOT / "index.html" if path == "/" else ROOT / path.strip("/") / "index.html"
